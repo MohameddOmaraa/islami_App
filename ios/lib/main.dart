@@ -1,4 +1,4 @@
-import 'package:basics_friday_c11/home.dart';
+import 'package:basics_friday_c11/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main(){
