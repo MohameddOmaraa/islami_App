@@ -1,5 +1,5 @@
 
-import 'package:basics_friday_c11/Home.dart';
+import 'package:basics_friday_c11/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        initialRoute:Home.routeName,
+        initialRoute:Splashscreen.routeName,
         routes: {
-          Home.routeName:(context)=>Home(),
+          Splashscreen.routeName:(context)=>Splashscreen(),
 
         }
     );
