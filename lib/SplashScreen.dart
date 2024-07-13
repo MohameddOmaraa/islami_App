@@ -1,5 +1,6 @@
 
 import 'package:basics_friday_c11/HomeScreen.dart';
+import 'package:basics_friday_c11/home/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
 class Splashscreen extends StatefulWidget {
