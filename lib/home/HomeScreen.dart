@@ -24,14 +24,9 @@ int Selectedindex=0;
        Image.asset("assets/imagess/bg1x.png",fit: BoxFit.fill,width: double.infinity,),
 
         Scaffold(
-    backgroundColor: Colors.transparent,
+
           appBar: AppBar(
-            centerTitle: true,
-            backgroundColor: Colors.transparent,
-            title: Text("Islami",style:GoogleFonts.elMessiri(
-              fontSize: 30,
-              fontWeight: FontWeight.w700,
-            )),
+            title: Text("Islami",),
     ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: Selectedindex,
