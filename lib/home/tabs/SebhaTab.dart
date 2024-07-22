@@ -1,3 +1,4 @@
+import 'package:basics_friday_c11/my_theme_data.dart';
 import 'package:flutter/material.dart';
 
 class SebhaTab extends StatefulWidget {
@@ -44,55 +45,76 @@ class _SebhaTabState extends State<SebhaTab> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body:
-      Center(
-        child: Stack(
-          alignment: Alignment.center ,
+    return
+      Column(
+        children: [
+          Stack(
           children: [
-            Column(
-           // mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset("assets/imagess/head_sebha_logo.png"),
-              ),
-              Transform.rotate(angle: _counter*3.14159/180,
-              child: Image.asset("assets/imagess/body_sebha_logo.png")),
-               Text(
-                   ("عدد التسبيحات"),
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black
-                ),
-                           ),
-              const SizedBox(height: 20),
-              Text(
-                _counter.toString(),
-                style: const TextStyle(fontSize: 40),
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _incrementCounter,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:Color(0xFFB7935F),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 40,
-                    vertical: 15,
-                  ),
-                ),
-                child:  Text(
-                  _tasbeeh[textIndex],
-                  style: TextStyle(fontSize: 20,color: Colors.white),
-                ),
-              ),
-            ],
-          ),
-        ]
+            Center(
+                child: Image.asset("assets/imagess/head_sebha_logo.png",height: 120,
+                )
+            ),
+            Center(
+              child: Transform.rotate(angle: _counter*3.14159/180,
+              child: Image.asset("assets/imagess/body_sebha_logo.png",width: 300,height: 400,)),
+
+            ),
+Padding(
+  padding: const EdgeInsets.fromLTRB(2, 325, 2, 2),
+  child: Center(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Text(
+        ("عدد التسبيحات"),
+        style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Colors.black
+        ),
       ),
-    )
-    );
+      SizedBox(height: 30),
+       Container(
+         width: 100,
+         height: 50,
+         decoration: BoxDecoration(
+           color:primaryColor,
+           borderRadius: BorderRadius.circular(15)
+         ),
+         child: Center(
+           child: Text(
+             _counter.toString(),
+             selectionColor: Colors.black,
+             style:  TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black),
+           ),
+         ),
+       ),
+      SizedBox(height: 50),
+       ElevatedButton(
+        onPressed: _incrementCounter,
+        style: ElevatedButton.styleFrom(
+          backgroundColor:primaryColor,
+          padding:  EdgeInsets.symmetric(
+            horizontal: 30,
+            vertical: 15,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20)
+          )
+        ),
+        child:  Text(
+          _tasbeeh[textIndex],
+          style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+        ),
+      ),
+    ],
+    ),
+  ),
+)
+
+          ],
+        ),
+      ]
+            );
   }
 }
