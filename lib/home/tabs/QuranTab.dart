@@ -1,3 +1,4 @@
+import 'package:basics_friday_c11/my_theme_data.dart';
 import 'package:basics_friday_c11/sura_details.dart';
 import 'package:basics_friday_c11/sura_model.dart';
 import 'package:flutter/material.dart';
@@ -25,15 +26,14 @@ class QuranTab extends StatelessWidget {
           Image.asset("assets/imagess/Screenshot (1).png"),
           Divider(
             thickness: 3,
-            color: Color(0xFFB7935F),
+color: primaryColor,
           ) ,
-          Text("Sura Names",style: GoogleFonts.elMessiri(
-            fontWeight: FontWeight.w600,
-            fontSize: 25,
-          ),),
+          Text("Sura Names",
+          style: Theme.of(context).textTheme.bodyMedium,
+          ),
           Divider(
             thickness: 3,
-            color: Color(0xFFB7935F),
+            color: primaryColor,
           ),
         Expanded(
           child: ListView.builder(
@@ -43,14 +43,13 @@ class QuranTab extends StatelessWidget {
                 child: InkWell(
                   onTap: () {
                    Navigator.pushNamed(context, SuraDetails.routeName,
-                  arguments: SuraModel(SuraNames[index] as int, index as String));
+                  arguments: SuraModel( index,SuraNames[index]));
                   },
                   child: Table(
                     border: TableBorder.all(),
                     children: [
                       TableRow(
                         children: [
-                          //Color(0xFF7935F),
                           TableCell(
                             child: Text('عددالآيات'),
                           ),

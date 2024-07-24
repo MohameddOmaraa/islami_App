@@ -19,6 +19,7 @@ List<Hadeethmodel>allAhadeeth=[];
 
   @override
   Widget build(BuildContext context) {
+
     if(allAhadeeth.isEmpty){
       LoadAhadeethFiles();
     }
@@ -78,6 +79,7 @@ for(int i=0;i<Ahadeeth.length;i++){
   Hadeethmodel hadeethmodel=Hadeethmodel(title, content);
   allAhadeeth.add(hadeethmodel);
   print(hadeethmodel.title);
+
 }
     });
     setState(() {

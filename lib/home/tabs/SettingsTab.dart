@@ -1,3 +1,6 @@
+import 'package:basics_friday_c11/home/bottom_sheets/language_bottomsheets.dart';
+import 'package:basics_friday_c11/home/bottom_sheets/theme_bottomsheets.dart';
+import 'package:basics_friday_c11/my_theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,53 +15,65 @@ class SettingsTab extends StatefulWidget {
 class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Text("language",style: GoogleFonts.elMessiri(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-          color: Colors.black
-        ),
-        ),
-      ),
-      body: Column(
-        children:<Widget> [
-          
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'arabic',
-                border:
-                OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
-                filled: false, // Add a white background to the text field
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+      Text("Theme"),
+          SizedBox(
+            height: 12,
+          ),
+          InkWell(
+            onTap:() {
+              showModalBottomSheet(
+                isDismissible: true,
+                isScrollControlled: true,
+                context: context, builder: (context) {
+                return ThemeBottomsheets();
+              },);
+            },
+            child: Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(22),
+                border: Border.all(color:primaryColor)
               ),
+              child: Text("light"),
             ),
           ),
-   SizedBox(height: 8,),
-   Row(
-     children: [
-       Text("     Theme",style: GoogleFonts.elMessiri(
-         fontSize: 20,
-         fontWeight: FontWeight.w600
-       ),)
-     ],
-   ),
-    SizedBox(height: 20,),
-    const Padding(
-    padding: EdgeInsets.symmetric(horizontal: 20),
-    child: TextField(
-    decoration: InputDecoration(
-    hintText: ' light',
-    border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
-    filled: false, // Add a white background to the text field
-    ),
+      SizedBox(
+        height: 44,
       ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+      Text("language"),
+          SizedBox(
+            height: 12,
+          ),
+          InkWell(
+            onTap:() {
+              showModalBottomSheet(
+                isDismissible: true,
+                isScrollControlled: true,
+                context: context, builder: (context) {
+return LanguageBottomsheets();
+              },);
+            },
+            child: Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(22),
+                border: Border.all(color:primaryColor)
+              ),
+              child: Text("Arabic"),
+            ),
+          ),
+        ],
+      ),
+    ],
     )
-    ]
-      )
     );
 
   }
