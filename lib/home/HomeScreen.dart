@@ -30,9 +30,7 @@ int Selectedindex=0;
          "assets/imagess/maindark_bg.png",
          fit: BoxFit.fill,
          width: double.infinity,),
-
         Scaffold(
-
           appBar: AppBar(
             title: Text("Islami",
             style: Theme.of(context).textTheme.bodyLarge,
@@ -46,12 +44,7 @@ int Selectedindex=0;
 
               });
             },
-            backgroundColor: primaryColor,
-              type: BottomNavigationBarType.shifting,
-              selectedItemColor: Colors.black,
-              unselectedItemColor: Colors.white,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
+
               items:[
              BottomNavigationBarItem(icon:ImageIcon(AssetImage("assets/imagess/icon_quran.png")),label: "", ),
              BottomNavigationBarItem(icon:ImageIcon(AssetImage("assets/imagess/icon_sebha.png")),label: "", ),

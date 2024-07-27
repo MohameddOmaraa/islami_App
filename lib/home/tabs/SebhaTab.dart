@@ -1,5 +1,7 @@
 import 'package:basics_friday_c11/my_theme_data.dart';
+import 'package:basics_friday_c11/provider/my_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
 
@@ -45,18 +47,24 @@ class _SebhaTabState extends State<SebhaTab> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    var provider=Provider.of<MyProvider>(context);
+
     return
       Column(
         children: [
           Stack(
           children: [
             Center(
-                child: Image.asset("assets/imagess/head_sebha_logo.png",height: 120,
+                child: Image.asset( provider.mode==ThemeMode.light?
+                "assets/imagess/head_sebha_logo.png":
+                "assets/imagess/head_sebha_dark.png",height: 120,
                 )
             ),
             Center(
               child: Transform.rotate(angle: _counter*3.14159/180,
-              child: Image.asset("assets/imagess/body_sebha_logo.png",width: 300,height: 400,)),
+              child: Image.asset( provider.mode==ThemeMode.light?
+              "assets/imagess/body_sebha_logo.png":
+              "assets/imagess/body_sebha_dark.png",width: 300,height: 400,)),
 
             ),
 Padding(
@@ -70,7 +78,7 @@ Padding(
         style: TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.bold,
-            color: Colors.black
+            color: provider.mode==ThemeMode.light? blackColor:Colors.white
         ),
       ),
       SizedBox(height: 30),
@@ -78,14 +86,14 @@ Padding(
          width: 100,
          height: 50,
          decoration: BoxDecoration(
-           color:primaryColor,
+           color:provider.mode==ThemeMode.light?primaryColor:Colors.transparent,
            borderRadius: BorderRadius.circular(15)
          ),
          child: Center(
            child: Text(
              _counter.toString(),
              selectionColor: Colors.black,
-             style:  TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black),
+             style:  TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),
            ),
          ),
        ),
@@ -93,7 +101,7 @@ Padding(
        ElevatedButton(
         onPressed: _incrementCounter,
         style: ElevatedButton.styleFrom(
-          backgroundColor:primaryColor,
+          backgroundColor:provider.mode==ThemeMode.light?primaryColor:yellowColor,
           padding:  EdgeInsets.symmetric(
             horizontal: 30,
             vertical: 15,
@@ -104,7 +112,9 @@ Padding(
         ),
         child:  Text(
           _tasbeeh[textIndex],
-          style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 20,
+              color: provider.mode==ThemeMode.light?Colors.white:blackColor,
+              fontWeight: FontWeight.bold),
         ),
       ),
     ],

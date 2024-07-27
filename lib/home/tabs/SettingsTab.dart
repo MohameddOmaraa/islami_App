@@ -48,7 +48,7 @@ class _SettingsTabState extends State<SettingsTab> {
       Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-      Text("language"),
+      Text("language",),
           SizedBox(
             height: 12,
           ),

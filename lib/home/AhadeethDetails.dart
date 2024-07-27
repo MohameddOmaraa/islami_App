@@ -1,4 +1,5 @@
 import 'package:basics_friday_c11/HadeethModel.dart';
+import 'package:basics_friday_c11/my_theme_data.dart';
 import 'package:basics_friday_c11/provider/my_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +25,8 @@ class _AhadeethDetailsState extends State<Ahadeethdetails> {
         children: [
           Image.asset(
             provider.mode==ThemeMode.light?
-          "assets/imagess/bg1x.png":
-          "assets/imagess/maindark_bg.png",fit: BoxFit.fill,width: double.infinity,),
+            "assets/imagess/default_bg.png":
+            "assets/imagess/maindark_bg.png",fit: BoxFit.fill,width: double.infinity,),
           Scaffold(
             backgroundColor: Colors.transparent,
             appBar: AppBar(
@@ -34,16 +35,17 @@ class _AhadeethDetailsState extends State<Ahadeethdetails> {
              title: Text(model.title,style:GoogleFonts.elMessiri(
                 fontSize: 30,
                 fontWeight: FontWeight.w700,
+               color: provider.mode==ThemeMode.light?blackColor:Colors.white
               )),
 
     ),
             body: Card(
-              color: Color(0xFFB7935F),
+              color:provider.mode==ThemeMode.light?primaryColor:Colors.transparent,
               margin: EdgeInsets.all(12),
               child: ListView.builder(itemBuilder:  (context, index) {
                 return Text(
                 "${model.content[index]}" ,textAlign: TextAlign.start,
-                  style: GoogleFonts.inder(fontSize: 25,color: Colors.white,
+                  style: GoogleFonts.inder(fontSize: 25,color: provider.mode==ThemeMode.light?Colors.white:yellowColor,
                   ),
                   textDirection: TextDirection.rtl,
 

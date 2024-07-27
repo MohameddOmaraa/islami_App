@@ -23,7 +23,7 @@ class LanguageBottomsheets extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("English"),Icon(Icons.done,size: 30,color: primaryColor,)
+              Text("English",),Icon(Icons.done,size: 30,color: primaryColor,)
             ],
           )
         ],

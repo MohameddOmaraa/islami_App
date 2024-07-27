@@ -7,7 +7,7 @@ class SuraDetalisProvider extends ChangeNotifier{
     String sura=await rootBundle.loadString("assets/files/${index+1}.txt");
     List <String> suralines=sura.split("\n");
     print(suralines);
-    verses==suralines;
+    verses=suralines;
 notifyListeners();
   }
 }

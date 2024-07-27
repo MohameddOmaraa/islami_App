@@ -1,10 +1,17 @@
+
 import 'package:basics_friday_c11/my_theme_data.dart';
+import 'package:basics_friday_c11/provider/my_provider.dart';
 import 'package:basics_friday_c11/sura_details.dart';
 import 'package:basics_friday_c11/sura_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class QuranTab extends StatelessWidget {
+
+
 
   QuranTab({super.key});
 
@@ -20,20 +27,24 @@ class QuranTab extends StatelessWidget {
   "الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر","المسد","الإخلاص","الفلق","الناس"];
   @override
   Widget build(BuildContext context) {
+    var provider=Provider.of<MyProvider>(context);
     return Center(
       child: Column(
         children: [
           Image.asset("assets/imagess/Screenshot (1).png"),
           Divider(
             thickness: 3,
-color: primaryColor,
+            color: provider.mode==ThemeMode.light?primaryColor:yellowColor,
           ) ,
           Text("Sura Names",
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: TextStyle(
+          color:provider.mode==ThemeMode.light?blackColor:Colors.white,
+          ),
+
           ),
           Divider(
             thickness: 3,
-            color: primaryColor,
+color: provider.mode==ThemeMode.light?primaryColor:yellowColor,
           ),
         Expanded(
           child: ListView.builder(
@@ -43,7 +54,7 @@ color: primaryColor,
                 child: InkWell(
                   onTap: () {
                    Navigator.pushNamed(context, SuraDetails.routeName,
-                  arguments: SuraModel( index,SuraNames[index]));
+                  arguments: SuraModel(SuraNames[index],index));
                   },
                   child: Table(
                     border: TableBorder.all(),
@@ -51,20 +62,27 @@ color: primaryColor,
                       TableRow(
                         children: [
                           TableCell(
-                            child: Text('عددالآيات'),
+                            child: Text('عددالآيات',style: TextStyle(
+                              color:provider.mode==ThemeMode.light?blackColor:Colors.white,
+                            ),),
                           ),
                           TableCell(
-                            child: Text('اسم السورة'),
+                            child: Text('اسم السورة',style: TextStyle(
+                              color:provider.mode==ThemeMode.light?blackColor:Colors.white,
+                            ),),
                           ),
                         ],
                       ),
                       TableRow(
                         children: [
                           TableCell(
-                            child: Text("${index+1}"),
-                          ),
+                            child: Text("${index+1}",style: TextStyle(
+              color:provider.mode==ThemeMode.light?blackColor:Colors.white,
+              ),),),
                           TableCell(
-                            child: Text(SuraNames[index]
+                            child: Text(SuraNames[index],style: TextStyle(
+                              color:provider.mode==ThemeMode.light?blackColor:Colors.white,
+                            ),
                             ),
                           ),
                         ],
