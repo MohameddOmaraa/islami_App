@@ -50,7 +50,9 @@ List<Hadeethmodel>allAhadeeth=[];
           ),
           Expanded(
             child: ListView.separated(
-              separatorBuilder: (context, index) => Divider(),
+              separatorBuilder: (context, index) => Divider(
+                color:provider.mode==ThemeMode.light?blackColor:yellowColor,
+              ),
               itemBuilder: (context, index) {
               return InkWell(onTap: () {
                 Navigator.pushNamed(context, hadeethDetailsScreen.routeName,arguments:allAhadeeth[index]);

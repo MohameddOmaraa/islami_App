@@ -23,15 +23,12 @@ class _AhadeethDetailsState extends State<Ahadeethdetails> {
 
     return Stack(
         children: [
-          Image.asset(
-            provider.mode==ThemeMode.light?
-            "assets/imagess/default_bg.png":
-            "assets/imagess/maindark_bg.png",fit: BoxFit.fill,width: double.infinity,),
+          Image.asset( provider.mode==ThemeMode.light?
+          "assets/imagess/default_bg.png":
+          "assets/imagess/maindark_bg.png",fit: BoxFit.fill,width: double.infinity,),
           Scaffold(
-            backgroundColor: Colors.transparent,
             appBar: AppBar(
               centerTitle: true,
-              backgroundColor: Colors.transparent,
              title: Text(model.title,style:GoogleFonts.elMessiri(
                 fontSize: 30,
                 fontWeight: FontWeight.w700,
@@ -41,11 +38,12 @@ class _AhadeethDetailsState extends State<Ahadeethdetails> {
     ),
             body: Card(
               color:provider.mode==ThemeMode.light?primaryColor:Colors.transparent,
+              elevation: double.infinity,
               margin: EdgeInsets.all(12),
               child: ListView.builder(itemBuilder:  (context, index) {
                 return Text(
                 "${model.content[index]}" ,textAlign: TextAlign.start,
-                  style: GoogleFonts.inder(fontSize: 25,color: provider.mode==ThemeMode.light?Colors.white:yellowColor,
+                  style: GoogleFonts.inder(fontSize: 25,color: provider.mode==ThemeMode.light?Colors.white:Colors.white,
                   ),
                   textDirection: TextDirection.rtl,
 
@@ -65,8 +63,6 @@ class _AhadeethDetailsState extends State<Ahadeethdetails> {
     List <String> suralines=sura.split("\n");
     print(suralines);
     verses==Hadeethlines;
-    setState(() {
-
-    });
+    setState(() {});
   }
 }
