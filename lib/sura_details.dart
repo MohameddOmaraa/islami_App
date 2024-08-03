@@ -34,7 +34,7 @@ var provider=Provider.of<SuraDetalisProvider>(context);
         ),
        body: Card(
     color: providerr.mode==ThemeMode.light?primaryColor:Colors.transparent,
-         elevation: double.infinity,
+         // elevation: double.infinity,
          margin: EdgeInsets.all(12),
           child: ListView.builder(itemBuilder:  (context, index) {
             return Text(

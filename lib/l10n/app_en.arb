@@ -1,0 +1,17 @@
+{
+"@@locale": "en",
+  "Islami":"islami",
+"Sura names":"sura Names",
+"ahadeeth":"ahadeeth",
+"Theme":"theme",
+"Language":"language",
+"light":"light",
+"Dark":"dark",
+"Number of Tasbeeh":"number of Tasbeeh ",
+"Broadcasting the Holy Quran":"Broadcasting the Holy Quran",
+"Arabic": "arabic",
+"English":"english",
+"@helloWorld": {
+"description": "The conventional newborn programmer greeting"
+}
+}

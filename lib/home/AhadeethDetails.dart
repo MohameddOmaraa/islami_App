@@ -23,9 +23,10 @@ class _AhadeethDetailsState extends State<Ahadeethdetails> {
 
     return Stack(
         children: [
-          Image.asset( provider.mode==ThemeMode.light?
-          "assets/imagess/default_bg.png":
-          "assets/imagess/maindark_bg.png",fit: BoxFit.fill,width: double.infinity,),
+          Image.asset(provider.mode == ThemeMode.light ?
+          "assets/imagess/default_bg.png" :
+          "assets/imagess/maindark_bg.png", fit: BoxFit.fill,
+            width: double.infinity,),
           Scaffold(
             appBar: AppBar(
               centerTitle: true,

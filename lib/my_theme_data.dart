@@ -10,6 +10,7 @@ class MyThemeData{
 
    static ThemeData lightTheme= ThemeData(
        primaryColor: primaryColor,
+  dividerColor: Colors.red,
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     type: BottomNavigationBarType.fixed,
     selectedItemColor: Colors.black,
@@ -63,6 +64,7 @@ bodyLarge:GoogleFonts.elMessiri(
    // ),
 
    static ThemeData DarkTheme= ThemeData(
+       dividerColor: Colors.red,
        primaryColor: primarydarkColor,
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,

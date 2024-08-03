@@ -1,4 +1,4 @@
-
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:basics_friday_c11/home/HomeScreen.dart';
 import 'package:basics_friday_c11/home/bottom_sheets/mode.dart';
 import 'package:basics_friday_c11/home/hadeethdetails.dart';
@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-String language="EN";
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
